@@ -54,19 +54,44 @@ header {
   color: turquoise;
 }
 
-.inicio-sesion {
-  height: 40px;
+.inicio-carrito {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.carrito {
+  height: 60px;
   background-color: orange;
-  border-radius: 0px 0px 10px 10px;
+  border-radius: 0px 0px 10px 0px;
   border: 0;
   transition: background-color 0.3s ease;
   cursor: pointer;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.7rem;
   text-align: center;
   text-decoration: none;
   color: white;
-  padding: 5px;
+  padding: 10px;
+}
+
+.carrito:hover {
+  background-color: turquoise;
+}
+
+.inicio-sesion {
+  height: 60px;
+  background-color: orange;
+  border-radius: 0px 0px 0px 10px;
+  border: 0;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.7rem;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
 }
 
 .inicio-sesion:hover {
