@@ -25,7 +25,7 @@
       </nav>
       <div class="inicio-carrito">
         <a class="inicio-sesion" href="inicio-sesion.html">Iniciar sesión</a>
-      <a class="carrito" href="carrito.html">🛒 Carrito</a> 
+      <a class="carrito" href="carrito.html">🛒 Carrito <span>(</span><span id="carrito-cantidad">0</span><span>)</span></a> 
       </div>
     </div>
   </header>
@@ -38,63 +38,72 @@
           <h2>Consola X</h2>
           <p>Descripción breve del producto.</p>
           <p class="price">$299.99</p>
-          <a href="#" class="buy-button">Comprar</a>
+          <button class="buy-button" on-click="addToCart(this)">Comprar</button>
+          <a href="#" class="view-button">Ver</a>
         </div>
         <div class="product-card">
           <img src="img/consolay.png" alt="Producto 2" class="product-image">
           <h2>Consola Y</h2>
           <p>Descripción breve del producto.</p>
           <p class="price">$399.99</p>
-          <a href="#" class="buy-button">Comprar</a>
+          <button class="buy-button" on-click="addToCart(this)">Comprar</button>
+          <a href="#" class="view-button">Ver</a>
         </div>
         <div class="product-card">
           <img src="img/consolaz.png" alt="Producto 3" class="product-image">
           <h2>Consola Z</h2>
           <p>Descripción breve del producto.</p>
           <p class="price">$499.99</p>
-          <a href="#" class="buy-button">Comprar</a>
+          <button class="buy-button" on-click="addToCart(this)">Comprar</button>
+          <a href="#" class="view-button">Ver</a>
         </div>
         <div class="product-card">
           <img src="img/slider1.png" alt="Producto 1" class="product-image">
           <h2>Consola A</h2>
           <p>Descripción breve del producto.</p>
           <p class="price">$299.99</p>
-          <a href="#" class="buy-button">Comprar</a>
+          <button class="buy-button" on-click="addToCart(this)">Comprar</button>
+          <a href="#" class="view-button">Ver</a>
         </div>
         <div class="product-card">
           <img src="img/slider2.png" alt="Producto 2" class="product-image">
           <h2>Consola B</h2>
           <p>Descripción breve del producto.</p>
           <p class="price">$399.99</p>
-          <a href="#" class="buy-button">Comprar</a>
+          <button class="buy-button" on-click="addToCart(this)">Comprar</button>
+          <a href="#" class="view-button">Ver</a>
         </div>
         <div class="product-card">
           <img src="img/slider3.png" alt="Producto 3" class="product-image">
           <h2>Consola C</h2>
           <p>Descripción breve del producto.</p>
           <p class="price">$499.99</p>
-          <a href="#" class="buy-button">Comprar</a>
+          <button class="buy-button" on-click="addToCart(this)">Comprar</button>
+          <a href="#" class="view-button">Ver</a>
         </div>
         <div class="product-card">
           <img src="img/consola1.png" alt="Producto 1" class="product-image">
           <h2>Consola 1</h2>
           <p>Descripción breve del producto.</p>
           <p class="price">$299.99</p>
-          <a href="#" class="buy-button">Comprar</a>
+          <button class="buy-button" on-click="addToCart(this)">Comprar</button>
+          <a href="#" class="view-button">Ver</a>
         </div>
         <div class="product-card">
           <img src="img/consola2.png" alt="Producto 2" class="product-image">
           <h2>Consola 2</h2>
           <p>Descripción breve del producto.</p>
           <p class="price">$399.99</p>
-          <a href="#" class="buy-button">Comprar</a>
+          <button class="buy-button" on-click="addToCart(this)">Comprar</button>
+          <a href="#" class="view-button">Ver</a>
         </div>
         <div class="product-card">
           <img src="img/consola3.png" alt="Producto 3" class="product-image">
           <h2>Consola 3</h2>
           <p>Descripción breve del producto.</p>
           <p class="price">$499.99</p>
-          <a href="#" class="buy-button">Comprar</a>
+          <button class="buy-button" on-click="addToCart(this)">Comprar</button>
+          <a href="#" class="view-button">Ver</a>
         </div>
       </div>
     </div>
@@ -114,5 +123,6 @@
       </div>
     </div>
   </footer>
+  <script src="js/carrito.js"></script>
 </body>
 </html>

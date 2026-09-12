@@ -31,7 +31,7 @@ header {
 
 .h-container {
   display: grid;
-  grid-template-columns: 1fr 6fr 1fr;
+  grid-template-columns: 1fr 6fr 2fr;
 }
 
 #main-nav ul {
@@ -61,7 +61,7 @@ header {
 }
 
 .carrito {
-  height: 60px;
+  height: 45px;
   background-color: orange;
   border-radius: 0px 0px 10px 0px;
   border: 0;
@@ -80,7 +80,7 @@ header {
 }
 
 .inicio-sesion {
-  height: 60px;
+  height: 45px;
   background-color: orange;
   border-radius: 0px 0px 0px 10px;
   border: 0;
