@@ -18,6 +18,7 @@
       <nav id="main-nav" aria-label="Navegación principal">
         <ul>
           <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
           <li><a href="productos.html">Productos</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="contacto.html">Contacto</a></li>
@@ -30,7 +31,25 @@
     </div>
   </header>
   <main>
-    
+    <h1>Inicio de Sesión</h1>
+    <div class="login">
+      <form id="form-login">
+        <div class="form-group">
+          <label for="user">Usuario:</label>
+          <input type="text" id="user" placeholder="Ej: juanito123" required>
+        </div>
+        <div class="form-group">
+          <label for="pass">Contraseña:</label>
+          <input type="password" id="pass" placeholder="Ej: AbCd5678" required>
+        </div>
+
+        <button type="submit" class="buy-button">Entrar</button>
+      </form>
+      <p id="message"></p>
+    </div>
+    <br>
+    <a href="registro.html">Registrate aquí</a>
+
   </main>
   <footer>
     <div class="f-container">
@@ -48,5 +67,6 @@
     </div>
   </footer>
   <script src="js/carrito.js"></script>
+  <script src="js/login.js"></script>
 </body>
 </html>

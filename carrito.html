@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ConFun | Consolas a un precio asequible</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/carrito.css">
 </head>
 <body>
   <header class="site-header">
@@ -18,6 +18,7 @@
       <nav id="main-nav" aria-label="Navegación principal">
         <ul>
           <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
           <li><a href="productos.html">Productos</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="contacto.html">Contacto</a></li>
@@ -33,7 +34,12 @@
     <div class="m-container">
       <h1>Carrito de compras</h1>
       <div id="carrito-items">
+      </div>
 
+      <div class="resumen-carrito">
+        <p>Total a pagar: $<span id="total">0</span></p>
+        <button class="buy-button">Proceder al pago</button>
+        <button class="buy-button" onclick="vaciarCarrito()">Vaciar carrito</button>
       </div>
     </div>
   </main>

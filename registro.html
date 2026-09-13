@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ConFun | Consolas a un precio asequible</title>
+  <title>Registro de Usuario | ConFun</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
   <header class="site-header">
@@ -31,7 +30,25 @@
     </div>
   </header>
   <main>
-    
+    <h1>Registro de Usuario</h1>
+    <div class="register">
+      <h2>Crear cuenta</h2>
+      <form id="form-register">
+        <div class="form-group">
+          <label for="new-user">Elige un Usuario:</label>
+          <input type="text" id="new-user" required>
+        </div>
+        <div class="form-group">
+          <label for="new-pass">Contraseña:</label>
+          <input type="password" id="new-pass" required>
+        </div>
+
+        <button type="submit" class="buy-button">Registrarse</button>
+      </form>
+      <p id="message"></p>
+    </div>
+    <br>
+    <a href="inicio-sesion.html">¿Ya tienes cuenta? Inicia sesión</a>
   </main>
   <footer>
     <div class="f-container">
@@ -49,5 +66,6 @@
     </div>
   </footer>
   <script src="js/carrito.js"></script>
+  <script src="js/register.js"></script>
 </body>
 </html>

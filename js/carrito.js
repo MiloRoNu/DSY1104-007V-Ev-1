@@ -1,41 +1,87 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const buyButtons = document.querySelectorAll('.buy-button');
-  buyButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const productCard = button.closest('.product-card');
-      const productName = productCard.querySelector('h2').textContent;
-      const productPrice = productCard.querySelector('.price').textContent;
-      const product = { name: productName, price: productPrice };
-      addToCart(product);
-    });
-  });
-});
+// Usamos 'cart' en todo el documento
+let cart = JSON.parse(localStorage.getItem('miCarrito')) || [];
 
-var cart = [];
+function addToCart(product, price) {
+  const nuevoProducto = {
+    nombre: product,
+    precio: price
+  };
 
-function addToCart(product) {
-  cart.push(product);
+  // Se añade a 'cart'
+  cart.push(nuevoProducto);
+
+  // Se guarda 'cart' (no carrito)
+  localStorage.setItem('miCarrito', JSON.stringify(cart));
+
   updateCart();
+  alert(product + " agregado al carrito");
 }
 
 function updateCart() {
-  const itemsCarritoContenedor = document.getElementById('carrito-items');
-  itemsCarritoContenedor.innerHTML = '';
-
-
-  if (cart.length === 0) {
-    const mensajeVacio = document.createElement('p');
-    mensajeVacio.textContent = 'El carrito está vacío.';
-    itemsCarritoContenedor.appendChild(mensajeVacio);
+  const contador = document.getElementById('carrito-cantidad');
+  if (contador) {
+    // Se lee la longitud de 'cart'
+    contador.innerText = cart.length;
   }
 }
 
-const carritoCantidad = document.getElementById('carrito-cantidad');
-function updateCartQuantity() {
-  carritoCantidad.textContent = cart.length;
+function vaciarCarrito() {
+  // Se vacía 'cart'
+  let texto = "¿Estás seguro que quieres vaciar el carrito?";
+  if (confirm(texto) == true) {
+    cart = [];
+    localStorage.removeItem('miCarrito');
+    updateCart();
+    mostrarCarrito();
+  }
+}
+
+function mostrarCarrito() {
+  const contenedor = document.getElementById('carrito-items');
+  const total = document.getElementById('total');
+
+  if (!contenedor) return;
+
+  contenedor.innerHTML = '';
+
+  if (cart.length === 0) {
+    contenedor.innerHTML = '<p>Tu carrito está vacío.</p>';
+    total.innerText = '0';
+    return;
+  }
+
+  let totalNum = 0;
+
+  cart.forEach((producto, index) => {
+    totalNum += producto.precio;
+
+    const div = document.createElement('div');
+    const precioFormateado = producto.precio.toLocaleString('es-CL');
+
+    div.innerHTML = `
+    <div class="card-prod">
+      <h3 class="nom-prod">${producto.nombre}</h3>
+      <p class="pre-prod">$${precioFormateado}</p>
+      <button class="buy-button" onclick="eliminarItem(${index})">Eliminar</button>
+    </div>
+    `;
+
+    contenedor.appendChild(div);
+  });
+
+  total.innerText = totalNum.toLocaleString('es-CL');
+}
+
+function eliminarItem(index) {
+  cart.splice(index, 1);
+
+  localStorage.setItem('miCarrito', JSON.stringify(cart));
+
+  updateCart();
+  mostrarCarrito();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  updateCartQuantity();
+  updateCart();
+  mostrarCarrito();
 });
-
