@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registro de Usuario | ConFun</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/inicio.css">
 </head>
 <body>
   <header class="site-header">
@@ -30,25 +31,28 @@
     </div>
   </header>
   <main>
-    <h1>Registro de Usuario</h1>
-    <div class="register">
-      <h2>Crear cuenta</h2>
-      <form id="form-register">
-        <div class="form-group">
-          <label for="new-user">Elige un Usuario:</label>
-          <input type="text" id="new-user" required>
-        </div>
-        <div class="form-group">
-          <label for="new-pass">Contraseña:</label>
-          <input type="password" id="new-pass" required>
-        </div>
-
-        <button type="submit" class="buy-button">Registrarse</button>
-      </form>
-      <p id="message"></p>
+    <div class="login">
+      <div class="login-box">
+        <h2>Crear cuenta</h2>
+        <br>
+        <form id="form-register">
+          <div class="form-group">
+            <label for="new-user">Elige un Usuario:</label>
+            <input type="text" id="new-user" required>
+          </div>
+          <div class="form-group">
+            <label for="new-pass">Contraseña:</label>
+            <input type="password" id="new-pass" required>
+          </div>
+          <button type="submit" class="buy-button">Registrarse</button>
+        </form>
+        <p id="message"></p>
+        <br>
+        <p>¿Ya tienes cuenta? <a href="inicio-sesion.html">Inicia sesión</a></p>
+      </div>
+      
     </div>
     <br>
-    <a href="inicio-sesion.html">¿Ya tienes cuenta? Inicia sesión</a>
   </main>
   <footer>
     <div class="f-container">
@@ -56,6 +60,7 @@
         <nav id="footer-nav" aria-label="Navegación del pie de página">
           <ul>
             <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
             <li><a href="productos.html">Productos</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="contacto.html">Contacto</a></li>

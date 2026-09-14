@@ -1,0 +1,29 @@
+.login {
+  width: 100%;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-box {
+  background-color: white;
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.login-box a {
+  text-decoration: none;
+  color: orange;
+  transition: color ease 0.3s;
+}
+
+.login-box a:hover {
+  color: turquoise;
+}
+

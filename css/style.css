@@ -120,6 +120,32 @@ body {
   background-color: turquoise;
 }
 
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  color: #0E202F;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #E2E8F0;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+input:focus {
+  border-color: #1B46F5;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(27, 70, 245, 0.1);
+}
+
 /* Footer */
 
 footer {
@@ -136,6 +162,16 @@ footer {
   padding: 25px;
 }
 
+#footer-nav ul li a {
+  text-decoration: none;
+  color: orange;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+#footer-nav ul li a:hover {
+  color: turquoise;
+}
 footer p {
   text-align: center;;
 }
