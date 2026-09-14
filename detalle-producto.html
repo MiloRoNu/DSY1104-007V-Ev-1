@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConFun | Detalle de Producto</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/productos.css">
+  <style>
+    .detalle-contenedor {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      padding: 30px;
+      margin: 30px auto;
+      background-color: #f5f5f5;
+      border-radius: 10px;
+      align-items: center;
+    }
+    .detalle-img img {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto;
+    }
+    .detalle-info h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+    .detalle-info .price {
+      font-size: 1.8rem;
+      color: orange;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .detalle-info p {
+      margin-bottom: 15px;
+    }
+    .specs-list {
+      list-style: square;
+      margin-left: 20px;
+      margin-bottom: 25px;
+    }
+    .specs-list li {
+      margin-bottom: 6px;
+    }
+    .btn-volver {
+      display: inline-block;
+      margin-top: 15px;
+      color: orange;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn-volver:hover {
+      color: turquoise;
+    }
+    @media (max-width: 768px) {
+      .detalle-contenedor {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="h-container">
+      <div class="brand">
+        <a href="index.html">
+          <img src="img/logo.png" alt="Logo de ConFun" class="logo" width="200" height="75">
+        </a>
+      </div>
+      <nav id="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="inicio-carrito">
+        <a class="inicio-sesion" href="inicio-sesion.html">Iniciar sesión</a>
+        <a class="carrito" href="carrito.html">  Carrito <span>(</span><span id="carrito-cantidad">0</span><span>)</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="m-container">
+      <div class="detalle-contenedor" id="detalle-producto">
+        <p>Cargando información del producto...</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="f-container">
+      <div class="footer-content">
+        <nav id="footer-nav" aria-label="Navegación del pie de página">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+        <p>&copy; 2024 ConFun. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/carrito.js"></script>
+  <script>
+    const catalogo = {
+      "consolax": {
+        nombre: "Consola X",
+        precio: 299990,
+        imagen: "img/consolax.png",
+        desc: "Excelente rendimiento para streaming y títulos estándar.",
+        specs: ["Almacenamiento: 512 GB SSD", "Resolución: Hasta 1440p", "Puertos: 2x USB 3.0, 1x HDMI 2.0", "Conexión: Wi-Fi 5"]
+      },
+      "consolay": {
+        nombre: "Consola Y",
+        precio: 399990,
+        imagen: "img/consolay.png",
+        desc: "Potencia gráfica superior para juegos a 60 FPS estables.",
+        specs: ["Almacenamiento: 1 TB SSD NVMe", "Resolución: 4K nativo", "Puertos: 3x USB-A, 1x USB-C, HDMI 2.1", "Conexión: Wi-Fi 6"]
+      },
+      "consolaz": {
+        nombre: "Consola Z",
+        precio: 499990,
+        imagen: "img/consolaz.png",
+        desc: "Nuestra consola más potente con compatibilidad Ray Tracing completa.",
+        specs: ["Almacenamiento: 2 TB SSD ultra rápido", "Rendimiento: Hasta 120 FPS en 4K", "Audio espacial 3D", "Mandos incluidos: 2 inalámbricos"]
+      },
+      "consolaa": {
+        nombre: "Consola A",
+        precio: 299990,
+        imagen: "img/slider1.png",
+        desc: "Edición estándar estilizada con amplia compatibilidad de títulos.",
+        specs: ["Almacenamiento: 512 GB", "Video: Full HD 1080p", "Refrigeración silenciosa", "Control ergonómico incluido"]
+      },
+      "consolab": {
+        nombre: "Consola B",
+        precio: 399990,
+        imagen: "img/slider2.png",
+        desc: "Optimización y diseño futurista para sesiones prolongadas de juego.",
+        specs: ["Almacenamiento: 1 TB SSD", "Arquitectura gráfica RDNA", "Bajo consumo energético", "Bluetooth 5.2"]
+      },
+      "consolac": {
+        nombre: "Consola C",
+        precio: 499990,
+        imagen: "img/slider3.png",
+        desc: "Edición pro con arquitectura multihilo para realidad virtual.",
+        specs: ["Almacenamiento: 1.5 TB SSD", "Soporte dedicado VR", "Tasa de refresco: 120 Hz", "Salida de audio óptica"]
+      },
+      "consola1": {
+        nombre: "Consola 1",
+        precio: 299990,
+        imagen: "img/consola1.png",
+        desc: "Modelo portátil y de sobremesa para todo tipo de jugadores.",
+        specs: ["Almacenamiento: 64 GB expandible por MicroSD", "Pantalla táctil HD", "Batería: hasta 6 horas", "Base dock con salida HDMI"]
+      },
+      "consola2": {
+        nombre: "Consola 2",
+        precio: 399990,
+        imagen: "img/consola2.png",
+        desc: "Plataforma versátil para catálogo digital y juego local cooperativo.",
+        specs: ["Almacenamiento: 825 GB SSD", "Audio Tempest 3D", "Lector de discos Ultra HD", "Soporte HDR10"]
+      },
+      "consola3": {
+        nombre: "Consola 3",
+        precio: 499990,
+        imagen: "img/consola3.png",
+        desc: "La cumbre del procesamiento gráfico con tiempos de carga instantáneos.",
+        specs: ["Almacenamiento: 1 TB PCIe 4.0", "Resolución: 4K nativo y 8K ready", "Ray Tracing por hardware", "Chasis con flujo térmico vertical"]
+      }
+    };
+
+    const id = new URLSearchParams(window.location.search).get('id');
+    const prod = catalogo[id];
+    const contenedor = document.getElementById('detalle-producto');
+
+    if (prod) {
+      document.title = `ConFun | ${prod.nombre}`;
+      const precioFormato = "$" + prod.precio.toLocaleString('es-CL');
+
+      contenedor.innerHTML = `
+        <div class="detalle-img">
+          <img src="${prod.imagen}" alt="${prod.nombre}">
+        </div>
+        <div class="detalle-info">
+          <h1>${prod.nombre}</h1>
+          <p class="price">${precioFormato}</p>
+          <p>${prod.desc}</p>
+          <h3>Especificaciones técnicas:</h3>
+          <ul class="specs-list">
+            ${prod.specs.map(item => `<li>${item}</li>`).join('')}
+          </ul>
+          <button class="buy-button" onclick="addToCart('${prod.nombre}', ${prod.precio})">Añadir al carrito</button>
+          <br>
+          <a href="productos.html" class="btn-volver">&larr; Volver al catálogo</a>
+        </div>
+      `;
+    } else {
+      contenedor.innerHTML = `
+        <div>
+          <h2>Producto no encontrado</h2>
+          <p>No se encontraron especificaciones para la consola seleccionada.</p>
+          <a href="productos.html" class="btn-volver">&larr; Volver a la lista de productos</a>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>
