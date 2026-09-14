@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ConFun | Consolas a un precio asequible</title>
+  <title>ConFun | Sobre Nosotros</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/nosotros.css">
 </head>
 <body>
   <header class="site-header">
     <div class="h-container">
       <div class="brand">
         <a href="index.html">
-          <img src="img/logo.png" alt="Logo de ConFun"  class="logo" width="200" height="75">
+          <img src="img/logo.png" alt="Logo de ConFun" class="logo" width="200" height="75">
         </a>
       </div>
       <nav id="main-nav" aria-label="Navegación principal">
@@ -26,13 +27,65 @@
       </nav>
       <div class="inicio-carrito">
         <a class="inicio-sesion" href="inicio-sesion.html">Iniciar sesión</a>
-      <a class="carrito" href="carrito.html">🛒 Carrito <span>(</span><span id="carrito-cantidad">0</span><span>)</span></a> 
+        <a class="carrito" href="carrito.html">  Carrito <span>(</span><span id="carrito-cantidad">0</span><span>)</span></a>
       </div>
     </div>
   </header>
+
   <main>
-    
+    <div class="m-container" style="height: auto; padding: 20px 10px;">
+      
+      <!-- Hero de la página -->
+      <section class="nosotros-hero">
+        <h1>Conoce más sobre ConFun</h1>
+        <p>Hacemos que el entretenimientolkzjsdfhgkjladshfkljashdfñkjashdfkjlashldfkjahslkdjfhaskjlfhalskjdfhlasdkjfh y la pasión por los videojuegos estén al alcance de todos, combinando potencia, garantía y precios justos.</p>
+      </section>
+
+      <!-- Historia / Misión -->
+      <section class="seccion-historia">
+        <div>
+          <h2>Nuestra Pasión por el Gaming</h2>
+          <p>
+            <strong>ConFun</strong> nació en 2024 a partir de una idea simple pero fundamental: jugar no debería ser un lujo inaccesible. Como entusiastas de las consolas, vimos cómo los altos costos alejaban a familias, estudiantes y jugadores casuales de las mejores experiencias del mercado.
+          </p>
+          <p>
+            Por eso nos propusimos seleccionar y distribuir consolas optimizadas con la mejor relación costo-calidad, garantizando siempre soporte técnico confiable, componentes testeados y una experiencia de compra transparente y ágil.
+          </p>
+        </div>
+        <div>
+          <img src="img/slider2.png" alt="Ecosistema de consolas ConFun">
+        </div>
+      </section>
+
+      <!-- Pilares / Valores -->
+      <section>
+        <h2 style="text-align: center; margin-bottom: 25px;">Lo que nos define</h2>
+        <div class="valores-grid">
+          <div class="valor-card">
+            <h3>Precios Asequibles</h3>
+            <p>Optimizamos nuestra cadena de distribución para trasladar el ahorro directo a tu bolsillo sin recortar en calidad.</p>
+          </div>
+          <div class="valor-card">
+            <h3>Garantía y Confianza</h3>
+            <p>Cada consola pasa por rigurosos controles de funcionamiento y pruebas térmicas antes de llegar a tus manos.</p>
+          </div>
+          <div class="valor-card">
+            <h3>Comunidad Gamer</h3>
+            <p>Brindamos asesoría personalizada para ayudarte a elegir la plataforma ideal según tus títulos favoritos.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Llamado a la acción -->
+      <section class="banner-compromiso">
+        <h2>¿Listo para subir de nivel?</h2>
+        <p>Explora nuestro catálogo completo y encuentra la consola perfecta para tus partidas solitarias o multijugador con amigos.</p>
+        <a href="productos.html" class="buy-button">Ver Catálogo de Consolas</a>
+      </section>
+
+    </div>
   </main>
+
   <footer>
     <div class="f-container">
       <div class="footer-content">
@@ -48,6 +101,7 @@
       </div>
     </div>
   </footer>
+
   <script src="js/carrito.js"></script>
 </body>
 </html>
