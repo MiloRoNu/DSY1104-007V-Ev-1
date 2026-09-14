@@ -30,8 +30,41 @@
       </div>
     </div>
   </header>
-  <main>
-    
+    <main>
+    <div class="m-container contacto-container">
+      <h1>Contáctanos</h1>
+      <p>¿Tienes dudas sobre un producto o tu pedido? Escríbenos y te respondemos a la brevedad.</p>
+
+      <form id="form-contacto" class="form-contacto" novalidate>
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required minlength="2" autocomplete="name">
+          <span class="error" data-error-for="nombre"></span>
+        </div>
+
+        <div class="campo">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+          <span class="error" data-error-for="email"></span>
+        </div>
+
+        <div class="campo">
+          <label for="asunto">Asunto</label>
+          <input type="text" id="asunto" name="asunto" required minlength="3">
+          <span class="error" data-error-for="asunto"></span>
+        </div>
+
+        <div class="campo">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="6" required minlength="10"></textarea>
+          <span class="error" data-error-for="mensaje"></span>
+        </div>
+
+        <button type="submit" class="btn-enviar">Enviar mensaje</button>
+
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
   </main>
   <footer>
     <div class="f-container">
@@ -50,5 +83,6 @@
     </div>
   </footer>
   <script src="js/carrito.js"></script>
+  <script src="js/contacto.js"></script>
 </body>
 </html>

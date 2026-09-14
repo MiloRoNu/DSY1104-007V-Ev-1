@@ -31,8 +31,43 @@
     </div>
   </header>
   <main>
-    
+    <section class="m-container casos-container">
+      <h2 class="casos-titulo">Noticias Importantes</h2>
+
+      <article class="caso-card">
+        <div class="caso-texto">
+          <h3>Caso Curioso #1</h3>
+          <p>Descripción breve del caso curioso número uno, pensada para dar contexto antes de invitar a leer el detalle completo.</p>
+          <button class="btn-ver-caso" type="button" aria-expanded="false" aria-controls="detalle-caso-1">
+            Ver caso <span class="chevron" aria-hidden="true">▾</span>
+          </button>
+          <p id="detalle-caso-1" class="caso-detalle oculto">
+            Aquí va el contenido extendido del caso curioso #1: el detalle completo que aparece al presionar "Ver caso".
+          </p>
+        </div>
+        <div class="caso-imagen">
+          <img class="caso-foto" src="img/consola1.png" alt="Consola destacada en el caso curioso #1" loading="lazy">
+        </div>
+      </article>
+
+      <article class="caso-card">
+        <div class="caso-texto">
+          <h3>Caso Curioso #2</h3>
+          <p>Descripción breve del caso curioso número dos, pensada para dar contexto antes de invitar a leer el detalle completo.</p>
+          <button class="btn-ver-caso" type="button" aria-expanded="false" aria-controls="detalle-caso-2">
+            Ver caso <span class="chevron" aria-hidden="true">▾</span>
+          </button>
+          <p id="detalle-caso-2" class="caso-detalle oculto">
+            Aquí va el contenido extendido del caso curioso #2: el detalle completo que aparece al presionar "Ver caso".
+          </p>
+        </div>
+        <div class="caso-imagen">
+          <img class="caso-foto" src="img/consola2.png" alt="Consola destacada en el caso curioso #2" loading="lazy">
+        </div>
+      </article>
+    </section>
   </main>
+
   <footer>
     <div class="f-container">
       <div class="footer-content">
@@ -50,5 +85,6 @@
     </div>
   </footer>
   <script src="js/carrito.js"></script>
+  <script src="js/blog.js"></script>
 </body>
 </html>

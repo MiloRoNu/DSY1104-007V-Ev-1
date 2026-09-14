@@ -1,0 +1,80 @@
+.contacto-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.form-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.campo label {
+  font-weight: 600;
+}
+
+.campo input,
+.campo textarea {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  outline: 2px solid #333;
+  outline-offset: 1px;
+}
+
+.campo.campo-invalido input,
+.campo.campo-invalido textarea {
+  border-color: #d32f2f;
+}
+
+.error {
+  color: #d32f2f;
+  font-size: 0.85rem;
+  min-height: 1em;
+}
+
+.btn-enviar {
+  align-self: flex-start;
+  padding: 0.7rem 1.6rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #222;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-enviar:hover {
+  background-color: #444;
+}
+
+.btn-enviar:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+.form-status {
+  font-weight: 600;
+}
+
+.form-status.exito {
+  color: #2e7d32;
+}
+
+.form-status.fallo {
+  color: #d32f2f;
+}
