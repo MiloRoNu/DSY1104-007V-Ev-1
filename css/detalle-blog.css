@@ -1,0 +1,149 @@
+/* ============================================================
+   detalle-blog.css
+   Estilos de las páginas de detalle del blog.
+   Mantiene la paleta naranjo/turquesa del sitio.
+   ============================================================ */
+
+.blog-detalle {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 25px 15px 45px;
+}
+
+/* ---------- Miga de pan ---------- */
+
+.miga {
+  font-size: 0.85rem;
+  color: #718096;
+  margin-bottom: 20px;
+}
+
+.miga a {
+  color: orange;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.miga a:hover {
+  color: turquoise;
+}
+
+/* ---------- Cabecera ---------- */
+
+.blog-cabecera {
+  border-bottom: 3px solid orange;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+}
+
+.blog-cabecera h1 {
+  font-size: 1.9rem;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+.blog-meta {
+  font-size: 0.85rem;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ---------- Imagen destacada ---------- */
+
+.blog-imagen {
+  margin-bottom: 28px;
+}
+
+.blog-imagen img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+}
+
+.blog-imagen figcaption {
+  margin-top: 8px;
+  font-size: 0.82rem;
+  color: #718096;
+  font-style: italic;
+  text-align: center;
+}
+
+/* ---------- Cuerpo del artículo ---------- */
+
+.blog-cuerpo p {
+  margin-bottom: 18px;
+  text-align: justify;
+}
+
+.blog-cuerpo h2 {
+  font-size: 1.3rem;
+  margin: 28px 0 12px;
+  color: #0E202F;
+  border-left: 5px solid turquoise;
+  padding-left: 12px;
+}
+
+.blog-cuerpo ul {
+  margin: 0 0 20px 25px;
+}
+
+.blog-cuerpo li {
+  margin-bottom: 8px;
+}
+
+/* ---------- Pie del artículo ---------- */
+
+.blog-pie {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  border-top: 2px solid #E2E8F0;
+  padding-top: 22px;
+  margin-top: 35px;
+}
+
+.blog-pie .buy-button {
+  padding: 9px 20px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-secundario-blog {
+  padding: 9px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #0E202F;
+  background-color: #E2E8F0;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secundario-blog:hover {
+  background-color: #CBD5E0;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 600px) {
+  .blog-cabecera h1 {
+    font-size: 1.45rem;
+  }
+
+  .blog-cuerpo p {
+    text-align: left;
+  }
+
+  .blog-pie {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .blog-pie a {
+    text-align: center;
+  }
+}

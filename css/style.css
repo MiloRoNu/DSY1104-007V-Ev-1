@@ -1,3 +1,12 @@
+
+:root {
+  --color-text: #1A202C;
+  --color-bg: #FFFFFF;
+  --color-primario: orange;
+  --color-secundario: turquoise;
+  --color-borde: #E2E8F0;
+}
+
 /* Reset básico */
 * {
   margin: 0;
@@ -174,4 +183,78 @@ footer {
 }
 footer p {
   text-align: center;;
+}
+
+
+/* ============================================================
+   Diseño responsivo
+   ============================================================ */
+
+/* Tablet: el header de 3 columnas se apila y el menú se centra. */
+@media (max-width: 900px) {
+  .h-container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  #main-nav ul {
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 0.8rem;
+  }
+
+  .inicio-carrito {
+    margin-bottom: 10px;
+  }
+
+  .inicio-sesion,
+  .carrito {
+    border-radius: 8px;
+  }
+}
+
+/* Móvil: tipografía y espaciados más compactos. */
+@media (max-width: 600px) {
+  body {
+    font-size: 15px;
+  }
+
+  .logo {
+    width: 160px;
+    height: auto;
+  }
+
+  #main-nav ul {
+    justify-content: center;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  #footer-nav ul {
+    flex-wrap: wrap;
+    padding: 15px;
+    gap: 0.8rem;
+  }
+
+  .buy-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Impresión: se ocultan los elementos de navegación. */
+@media print {
+  .site-header,
+  footer,
+  .buy-button {
+    display: none;
+  }
 }

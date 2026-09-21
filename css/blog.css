@@ -87,3 +87,32 @@
 .caso-foto.caso-foto--rota {
   display: none;
 }
+
+/* Enlace al artículo completo (páginas detalle-blog1/2.html) */
+.btn-leer-caso {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  background-color: orange;
+  color: white;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-leer-caso:hover {
+  background-color: turquoise;
+}
+
+@media (max-width: 600px) {
+  .caso-card {
+    padding: 1.2rem;
+  }
+
+  .btn-leer-caso {
+    display: block;
+    margin: 10px 0 0;
+    text-align: center;
+  }
+}

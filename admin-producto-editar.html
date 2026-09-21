@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ConFun | Panel de administración</title>
+  <title>ConFun | Editar producto</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/admin.css">
 </head>
@@ -36,9 +36,9 @@
         <h2>Administración</h2>
         <ul>
           <li class="grupo">General</li>
-          <li><a href="admin-panel.html" class="activo">Inicio</a></li>
+          <li><a href="admin-panel.html">Inicio</a></li>
           <li class="grupo">Productos</li>
-          <li><a href="admin-productos.html">Listado de productos</a></li>
+          <li><a href="admin-productos.html" class="activo">Listado de productos</a></li>
           <li><a href="admin-producto-nuevo.html" data-requiere-edicion>Nuevo producto</a></li>
           <li class="grupo">Usuarios</li>
           <li><a href="admin-usuarios.html">Listado de usuarios</a></li>
@@ -49,36 +49,68 @@
       </aside>
       <section class="admin-contenido">
         <div class="admin-encabezado">
-          <h1>¡Hola Administrador!</h1>
+          <h1>Editar producto</h1>
           <p class="admin-sesion">
             Sesión: <strong id="admin-usuario-activo">—</strong>
             <button type="button" class="btn-tabla" id="btn-cerrar-sesion">Cerrar sesión</button>
           </p>
         </div>
-        <p>Desde aquí puedes gestionar el catálogo de productos y los usuarios del sistema.</p>
+        <form id="form-producto" class="form-admin" novalidate>
+          <div class="campo">
+            <label for="codigo">Código del producto</label>
+            <input type="text" id="codigo" name="codigo" minlength="3" required>
+            <span class="error"></span>
+          </div>
 
-        <div class="admin-tarjetas">
-          <article class="admin-tarjeta">
-            <h3>Productos</h3>
-            <p class="numero" id="total-productos">0</p>
-            <p>registrados en el catálogo</p>
-            <a class="btn-tabla" href="admin-productos.html">Ver listado</a>
-          </article>
+          <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" maxlength="100" required>
+            <span class="error"></span>
+          </div>
 
-          <article class="admin-tarjeta">
-            <h3>Usuarios</h3>
-            <p class="numero" id="total-usuarios">0</p>
-            <p>cuentas en el sistema</p>
-            <a class="btn-tabla" href="admin-usuarios.html">Ver listado</a>
-          </article>
+          <div class="campo campo-ancho">
+            <label for="descripcion">Descripción (opcional)</label>
+            <textarea id="descripcion" name="descripcion" rows="3" maxlength="500"></textarea>
+            <span class="error"></span>
+          </div>
 
-          <article class="admin-tarjeta">
-            <h3>Stock crítico</h3>
-            <p class="numero" id="total-criticos">0</p>
-            <p>productos bajo el mínimo</p>
-            <a class="btn-tabla" href="admin-productos.html">Revisar</a>
-          </article>
-        </div>
+          <div class="campo">
+            <label for="precio">Precio</label>
+            <input type="number" id="precio" name="precio" min="0" step="0.01" required>
+            <span class="error"></span>
+          </div>
+
+          <div class="campo">
+            <label for="stock">Stock</label>
+            <input type="number" id="stock" name="stock" min="0" step="1" required>
+            <span class="error"></span>
+          </div>
+
+          <div class="campo">
+            <label for="stockCritico">Stock crítico (opcional)</label>
+            <input type="number" id="stockCritico" name="stockCritico" min="0" step="1">
+            <span class="error"></span>
+          </div>
+
+          <div class="campo">
+            <label for="categoria">Categoría</label>
+            <select id="categoria" name="categoria" required></select>
+            <span class="error"></span>
+          </div>
+
+          <div class="campo campo-ancho">
+            <label for="imagen">Ruta de la imagen (opcional)</label>
+            <input type="text" id="imagen" name="imagen" placeholder="img/consolax.png">
+            <span class="error"></span>
+          </div>
+
+          <p id="form-mensaje" class="form-mensaje" role="status" aria-live="polite"></p>
+
+          <div class="form-acciones">
+            <button type="submit" class="buy-button">Guardar cambios</button>
+            <a class="btn-secundario" href="admin-productos.html">Cancelar</a>
+          </div>
+        </form>
       </section>
     </div>
   </main>
@@ -102,20 +134,12 @@
   <script src="js/admin-guard.js"></script>
   <script src="js/admin-data.js"></script>
   <script src="js/validaciones.js"></script>
+  <script src="js/admin-productos.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      if (!protegerVista(false)) return;
+      if (!protegerVista(true)) return;
       aplicarSesionEnVista();
-
-      const productos = leerProductos();
-      const usuarios = leerUsuarios();
-      const criticos = productos.filter(
-        (p) => p.stockCritico !== '' && Number(p.stock) <= Number(p.stockCritico)
-      );
-
-      document.getElementById('total-productos').textContent = productos.length;
-      document.getElementById('total-usuarios').textContent = usuarios.length;
-      document.getElementById('total-criticos').textContent = criticos.length;
+      iniciarFormularioProducto('editar');
     });
   </script>
 </body>

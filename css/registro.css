@@ -1,0 +1,82 @@
+
+.login-box:has(.form-registro) {
+  max-width: 720px;
+}
+
+.form-registro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  text-align: left;
+}
+
+.form-registro .campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-registro .campo-ancho {
+  grid-column: 1 / -1;
+}
+
+.form-registro select,
+.form-registro textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #E2E8F0;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: inherit;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.form-registro select:focus,
+.form-registro textarea:focus {
+  border-color: #1B46F5;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(27, 70, 245, 0.1);
+}
+
+.form-registro .error {
+  color: #C53030;
+  font-size: 0.78rem;
+  min-height: 1em;
+  margin-top: 4px;
+}
+
+.form-registro .campo-invalido input,
+.form-registro .campo-invalido select,
+.form-registro .campo-invalido textarea {
+  border-color: #C53030;
+}
+
+.form-registro .buy-button {
+  grid-column: 1 / -1;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+/* Estos estilos también sirven al formulario de login corregido. */
+#form-login .campo .error {
+  display: block;
+  color: #C53030;
+  font-size: 0.78rem;
+  min-height: 1em;
+  margin-top: 4px;
+  text-align: left;
+}
+
+#form-login .campo-invalido input {
+  border-color: #C53030;
+}
+
+@media (max-width: 700px) {
+  .form-registro {
+    grid-template-columns: 1fr;
+  }
+
+  .login-box {
+    padding: 25px 20px;
+  }
+}

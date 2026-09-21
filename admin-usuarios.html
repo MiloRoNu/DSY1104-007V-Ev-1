@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ConFun | Panel de administración</title>
+  <title>ConFun | Usuarios (admin)</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/admin.css">
 </head>
@@ -36,12 +36,12 @@
         <h2>Administración</h2>
         <ul>
           <li class="grupo">General</li>
-          <li><a href="admin-panel.html" class="activo">Inicio</a></li>
+          <li><a href="admin-panel.html">Inicio</a></li>
           <li class="grupo">Productos</li>
           <li><a href="admin-productos.html">Listado de productos</a></li>
           <li><a href="admin-producto-nuevo.html" data-requiere-edicion>Nuevo producto</a></li>
           <li class="grupo">Usuarios</li>
-          <li><a href="admin-usuarios.html">Listado de usuarios</a></li>
+          <li><a href="admin-usuarios.html" class="activo">Listado de usuarios</a></li>
           <li><a href="admin-usuario-nuevo.html" data-requiere-edicion>Nuevo usuario</a></li>
           <li class="grupo">Tienda</li>
           <li><a href="index.html">Volver a la tienda</a></li>
@@ -49,36 +49,29 @@
       </aside>
       <section class="admin-contenido">
         <div class="admin-encabezado">
-          <h1>¡Hola Administrador!</h1>
+          <h1>Usuarios</h1>
           <p class="admin-sesion">
             Sesión: <strong id="admin-usuario-activo">—</strong>
             <button type="button" class="btn-tabla" id="btn-cerrar-sesion">Cerrar sesión</button>
           </p>
         </div>
-        <p>Desde aquí puedes gestionar el catálogo de productos y los usuarios del sistema.</p>
+        <p><a class="buy-button" href="admin-usuario-nuevo.html" data-requiere-edicion>Nuevo usuario</a></p>
 
-        <div class="admin-tarjetas">
-          <article class="admin-tarjeta">
-            <h3>Productos</h3>
-            <p class="numero" id="total-productos">0</p>
-            <p>registrados en el catálogo</p>
-            <a class="btn-tabla" href="admin-productos.html">Ver listado</a>
-          </article>
-
-          <article class="admin-tarjeta">
-            <h3>Usuarios</h3>
-            <p class="numero" id="total-usuarios">0</p>
-            <p>cuentas en el sistema</p>
-            <a class="btn-tabla" href="admin-usuarios.html">Ver listado</a>
-          </article>
-
-          <article class="admin-tarjeta">
-            <h3>Stock crítico</h3>
-            <p class="numero" id="total-criticos">0</p>
-            <p>productos bajo el mínimo</p>
-            <a class="btn-tabla" href="admin-productos.html">Revisar</a>
-          </article>
-        </div>
+        <table class="tabla-admin">
+          <thead>
+            <tr>
+              <th>RUN</th>
+              <th>Nombre</th>
+              <th>Correo</th>
+              <th>Tipo</th>
+              <th>Comuna</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-usuarios">
+            <tr><td colspan="6">Cargando usuarios...</td></tr>
+          </tbody>
+        </table>
       </section>
     </div>
   </main>
@@ -102,20 +95,12 @@
   <script src="js/admin-guard.js"></script>
   <script src="js/admin-data.js"></script>
   <script src="js/validaciones.js"></script>
+  <script src="js/regiones-comunas.js"></script>
+  <script src="js/admin-usuarios.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       if (!protegerVista(false)) return;
-      aplicarSesionEnVista();
-
-      const productos = leerProductos();
-      const usuarios = leerUsuarios();
-      const criticos = productos.filter(
-        (p) => p.stockCritico !== '' && Number(p.stock) <= Number(p.stockCritico)
-      );
-
-      document.getElementById('total-productos').textContent = productos.length;
-      document.getElementById('total-usuarios').textContent = usuarios.length;
-      document.getElementById('total-criticos').textContent = criticos.length;
+      iniciarListadoUsuarios();
     });
   </script>
 </body>
