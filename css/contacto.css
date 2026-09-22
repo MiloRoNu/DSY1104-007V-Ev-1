@@ -30,6 +30,13 @@
   font-family: inherit;
 }
 
+.campo textarea {
+  resize: none;
+  overflow-y: auto;
+  box-sizing: border-box;
+  width: 100%;
+}
+
 .campo input:focus,
 .campo textarea:focus {
   outline: 2px solid #333;

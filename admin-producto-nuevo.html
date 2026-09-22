@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConFun | Productos (admin)</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="h-container">
+      <div class="brand">
+        <a href="index.html">
+          <img src="img/logo.png" alt="Logo de ConFun" class="logo" width="200" height="75">
+        </a>
+      </div>
+      <nav id="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="inicio-carrito">
+        <a class="inicio-sesion" href="inicio-sesion.html">Iniciar sesión</a>
+        <a class="carrito" href="carrito.html">🛒 Carrito <span>(</span><span id="carrito-cantidad">0</span><span>)</span></a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="admin-layout">
+      <aside class="admin-sidebar">
+        <h2>Administración</h2>
+        <ul>
+          <li class="grupo">General</li>
+          <li><a href="admin-panel.html">Inicio</a></li>
+          <li class="grupo">Productos</li>
+          <li><a href="admin-productos.html">Listado de productos</a></li>
+          <li><a href="admin-producto-nuevo.html" class="activo" data-requiere-edicion>Nuevo producto</a></li>
+          <li class="grupo">Usuarios</li>
+          <li><a href="admin-usuarios.html">Listado de usuarios</a></li>
+          <li><a href="admin-usuario-nuevo.html" data-requiere-edicion>Nuevo usuario</a></li>
+          <li class="grupo">Tienda</li>
+          <li><a href="index.html">Volver a la tienda</a></li>
+        </ul>
+      </aside>
+      <section class="admin-contenido">
+        <h2>Nuevo producto</h2>
+        <br>
+        <div class="form-admin">
+          <form id="form-new-product">
+            <div>
+              <label for="product-code">Código producto:</label>
+              <input type="text" name="product-code" id="product-code" required>
+            </div>
+            <div>
+              <label for="product-name">Nombre producto:</label>
+              <input type="text" name="product-name" id="product-name" required>
+            </div>
+            <div>
+              <label for="product-price">Precio producto:</label>
+              <input type="text" name="product-price" id="product-price" required>
+            </div>
+            <div>
+              <label for="product-quantity">Cantidad producto:</label>
+              <input type="number" name="product-quantity" id="product-quantity" required>
+            </div>
+            <div>
+              <label for="product-description">Descripcion producto:</label>
+              <textarea name="product-description" id="product-description"></textarea>
+            </div>
+            <div>
+              <label for="product-category">Categoría producto:</label>
+              <select name="product-category" id="product-category">
+                <option value="" disabled selected>Seleccione una opción...</option>
+                <option value="Consolas">Consolas</option>
+              </select>
+            </div>
+            <div>
+              <label for="product-pic">Foto producto:</label>
+              <input type="file" name="product-pic" id="product-pic" required>
+            </div>
+            <br>
+            <button type="submit" class="btn-save">Guardar</button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <div class="f-container">
+      <div class="footer-content">
+        <nav id="footer-nav" aria-label="Navegación del pie de página">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+        <p>&copy; 2024 ConFun. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/carrito.js"></script>
+  <script src="js/admin-guard.js"></script>
+  <script src="js/admin-data.js"></script>
+  <script src="js/validaciones.js"></script>
+  <script src="js/admin-productos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!protegerVista(false)) return;
+      iniciarListadoProductos();
+    });
+  </script>
+</body>
+</html>

@@ -73,12 +73,15 @@ function mostrarCarrito() {
 }
 
 function eliminarItem(index) {
-  cart.splice(index, 1);
+  let texto = "¿Estás seguro que quieres eliminar el producto?";
+  if (confirm(texto) == true) {
+    cart.splice(index, 1);
 
-  localStorage.setItem('miCarrito', JSON.stringify(cart));
+    localStorage.setItem('miCarrito', JSON.stringify(cart));
 
-  updateCart();
-  mostrarCarrito();
+    updateCart();
+    mostrarCarrito();
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
