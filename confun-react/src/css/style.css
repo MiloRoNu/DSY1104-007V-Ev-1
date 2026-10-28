@@ -1,0 +1,260 @@
+
+:root {
+  --color-text: #1A202C;
+  --color-bg: #FFFFFF;
+  --color-primario: orange;
+  --color-secundario: turquoise;
+  --color-borde: #E2E8F0;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos generales */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+}
+
+/* Header */
+
+.logo {
+  display: block;
+}
+
+header {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.h-container {
+  display: grid;
+  grid-template-columns: 1fr 6fr 2fr;
+}
+
+#main-nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 25px;
+}
+
+#main-nav ul li a {
+  text-decoration: none;
+  color: orange;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+#main-nav ul li a:hover {
+  color: turquoise;
+}
+
+.inicio-carrito {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.carrito {
+  height: 45px;
+  background-color: orange;
+  border-radius: 0px 0px 10px 0px;
+  border: 0;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.7rem;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+
+.carrito:hover {
+  background-color: turquoise;
+}
+
+.inicio-sesion {
+  height: 45px;
+  background-color: orange;
+  border-radius: 0px 0px 0px 10px;
+  border: 0;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.7rem;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+
+.inicio-sesion:hover {
+  background-color: turquoise;
+}
+
+
+/* Body */
+
+body {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.buy-button {
+  padding: 5px;
+  cursor: pointer;
+  color: white;
+  background-color: orange;
+  border-radius: 5px;
+  transition: background-color ease 0.3s;
+  border: 0;
+}
+
+.buy-button:hover {
+  background-color: turquoise;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  color: #0E202F;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #E2E8F0;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+input:focus {
+  border-color: #1B46F5;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(27, 70, 245, 0.1);
+}
+
+/* Footer */
+
+footer {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+#footer-nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 25px;
+}
+
+#footer-nav ul li a {
+  text-decoration: none;
+  color: orange;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+#footer-nav ul li a:hover {
+  color: turquoise;
+}
+footer p {
+  text-align: center;;
+}
+
+
+/* ============================================================
+   Diseño responsivo
+   ============================================================ */
+
+/* Tablet: el header de 3 columnas se apila y el menú se centra. */
+@media (max-width: 900px) {
+  .h-container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  #main-nav ul {
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 0.8rem;
+  }
+
+  .inicio-carrito {
+    margin-bottom: 10px;
+  }
+
+  .inicio-sesion,
+  .carrito {
+    border-radius: 8px;
+  }
+}
+
+/* Móvil: tipografía y espaciados más compactos. */
+@media (max-width: 600px) {
+  body {
+    font-size: 15px;
+  }
+
+  .logo {
+    width: 160px;
+    height: auto;
+  }
+
+  #main-nav ul {
+    justify-content: center;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  #footer-nav ul {
+    flex-wrap: wrap;
+    padding: 15px;
+    gap: 0.8rem;
+  }
+
+  .buy-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Impresión: se ocultan los elementos de navegación. */
+@media print {
+  .site-header,
+  footer,
+  .buy-button {
+    display: none;
+  }
+}

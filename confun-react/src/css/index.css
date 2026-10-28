@@ -1,0 +1,31 @@
+/* Estilos solo de la página de inicio.
+   Las flechas y el cambio de imagen ahora los maneja React Bootstrap,
+   así que aquí solo queda el texto encima y el look de las tarjetas. */
+
+.hero-carousel {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.carousel-image {
+  max-height: 80vh;
+  object-fit: cover;
+}
+
+.texto {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  color: whitesmoke;
+  text-shadow: 4px 4px 12px rgba(0, 0, 0, 1);
+  z-index: 3;
+}
+
+.noticias {
+  padding: 0 10px 20px;
+}
+
+.news-card {
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
